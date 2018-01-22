@@ -14,11 +14,19 @@
         "name": "Athom B.V.",
         "email": "info@athom.nl"
     },
+    "images": {
+	    "large": "/assets/images/large.jpg",
+	    "small": "/assets/images/small.jpg"
+    },
     "drivers": [
 	    {
 		    "id": "aurora",
 		    "name": {
 			    "en": "Nanoleaf Aurora"
+		    },
+		    "images": {
+			    "large": "/drivers/aurora/assets/images/large.jpg",
+			    "small": "/drivers/aurora/assets/images/small.jpg"
 		    },
 		    "class": "light",
 		    "capabilities": [
