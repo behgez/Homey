@@ -1,0 +1,14 @@
+<script type="text/javascript">
+var device = window.selected_devices[0];
+	device = JSON.parse(device);
+		
+Homey.emit('get_token', device, function( err, result ){
+	if( err ) return Homey.alert( err.message || err.toString() );
+	Homey.addDevice( result, function( err, result ){
+		if( err ) Homey.alert(err);
+		Homey.done();
+	});
+})
+</script>
+
+<p data-i18n="pair.instruction"></p>
