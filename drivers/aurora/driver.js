@@ -17,6 +17,7 @@ class NanoleafDriver extends Homey.Driver {
 			if( !data.query || data.query.indexOf('_nanoleafapi._tcp.local') === -1 ) return;
 			
 			let txtObj = parseTxt( data.txt );
+			if( txtObj === null ) return;
 			let id = txtObj.id;
 			
 			if( typeof this._foundDevices[id] !== 'undefined' ) return;
@@ -135,6 +136,7 @@ module.exports = NanoleafDriver;
 
 function parseTxt( txt ) {
     let resultObj = {};
+    if( !Array.isArray(txt) ) return null;
     txt.map(txtEntry => {
 	    return txtEntry.split('=');
     }).forEach(txtEntry => {
